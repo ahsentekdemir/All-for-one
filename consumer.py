@@ -1,6 +1,6 @@
 import pika
 
-params = pika.URLParameters('amqps://ptavgioq:zqGoD0Tacrty3m283aKTI6nT21pmm3-W@roedeer.rmq.cloudamqp.com/ptavgioq')
+params = pika.URLParameters('amqps:')
 connection = pika.BlockingConnection(params)
 channel = connection.channel()
 
