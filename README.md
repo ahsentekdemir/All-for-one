@@ -38,16 +38,14 @@ TODO: Description of features
 The application can be run locally or in a docker container, the requirements for each setup are listed below.
 
 
-### EGO
-A running instance of [EGO](https://github.com/overture-stack/ego/) is required to generate the Authorization tokens and to provide the verification key.
-
-[EGO](https://github.com/overture-stack/ego/) can be cloned and run locally if no public server is available. 
-
-
 ### Local
-* [Java 8 SDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-* [Maven](https://maven.apache.org/download.cgi)
+* [Python](https://www.python.org/downloads/)
+* [Django](https://www.djangoproject.com/download/)
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/installation/)
 
+
+### Rabbitmq
+* [RabbitMQ](https://www.rabbitmq.com/download.html)
 
 ### Docker
 * [Docker](https://www.docker.com/get-docker)
