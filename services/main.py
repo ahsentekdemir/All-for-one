@@ -1,4 +1,4 @@
-from flask import Flask, json
+from flask import Flask, json, abort
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import UniqueConstraint
@@ -37,7 +37,19 @@ def index():
 @app.route('/api/products/<int:id>/like', methods=['POST'])
 def like(id):
     req = requests.get('http://0.0.0.1:8000/api/user')
-    return jsonify(req.json())
+    data = jsonify(req.json())
+    try:
+        productUser = ProductUser(user_id=data['id'], product_id=id)
+        db.session.add(productUser)
+        db.session.commit()
+        
+        # some event ll be there.  
+    except:
+        abort(400, 'u already like this product')
+        
+    return jsonify({
+        'message': 'success'
+    })
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")

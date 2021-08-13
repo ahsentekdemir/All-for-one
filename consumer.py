@@ -16,11 +16,13 @@ def callback(ch, method, props, body):
         product = Product(id=data['id'], title=data['title'], image=data['image'])
         db.session.add(product)
         db.session.commit()
+        
     elif properties.content_type == 'product_updated':
         product = Product.query.get(data['id'])
         product.title = data['title']
         product.image = data['image']
         db.session.commit()
+        
     elif properties.content_type == 'product_deleted':
         product = Product.query.get(data)
         db.session.delete(product)
