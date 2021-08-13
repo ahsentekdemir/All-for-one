@@ -28,9 +28,6 @@ TODO: Replace with introduction
 
 ## Features
 TODO: Description of features
-
-* Include a list of
-* all the many beautiful
 * web server features
 
 
