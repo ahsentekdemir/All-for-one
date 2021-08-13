@@ -1,10 +1,10 @@
 import pika
 
-params = pika.URLParameters('amqps://test')
+params = pika.URLParameters('amqps://ptavgioq:zqGoD0Tacrty3m283aKTI6nT21pmm3-W@roedeer.rmq.cloudamqp.com/ptavgioq')
 connection = pika.BlockingConnection(params)
 channel = connection.channel()
 
-def publish(method, body):
-    channel.basic_publish(exchange='', routing_key='admin', body='testdata')
+def publish():
+    channel.basic_publish(exchange='', routing_key='main', body='testdata')
 
 
